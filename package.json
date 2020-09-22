@@ -1,0 +1,31 @@
+{
+  "name": "NiceLabelResersTool",
+  "version": "1.0.0",
+  "description": "Tool used to manipulate data in NiceLabel database",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daniel c Douglas",
+  "license": "ISC",
+  "dependencies": {
+    "csv": "^5.3.2",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "mssql": "^6.2.0",
+    "node-sspi": "^0.2.8",
+    "nodemailer": "^6.4.10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danieldouglas88/"
+  },
+  "keywords": [
+    "node",
+    "app"
+  ],
+  "directories": {
+    "lib": "lib"
+  },
+  "devDependencies": {}
+}

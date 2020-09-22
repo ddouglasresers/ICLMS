@@ -1,0 +1,19 @@
+{{#if ProductID}}
+<h2>Your record has been successfully updated. </h2>
+<hr>
+<h2><a href="details?ProductID={{ProductID}}">Click here</a> to go to record.
+</h2>
+{{/if}}
+
+{{#unless ProductID}}
+<script>
+    alert("You have successfully created a new record. Now you must create a Samanage ticket.");
+    window.open("https://app.samanage.com/");
+</script>
+<h2>Your record with <b>UPC #{{upc}}</b> has been successfully created. </h2>
+<hr>
+<h2>Please create a Samanage ticket detailing the creation of a new Part Number.</h2>
+<h2><a href="../?fg={{upc}}">Click here</a> to search for record.
+
+
+{{/unless}}

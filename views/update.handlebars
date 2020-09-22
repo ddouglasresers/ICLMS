@@ -1,0 +1,253 @@
+  <script src="./../js/jquery.min.js" type="text/javascript"></script>
+  <script src="./../js/popper.min.js" type="text/javascript"></script>
+<script>
+
+  function validateUpc() {
+    let getEle = document.getElementById('fg').value;
+
+    if (getEle.substring(getEle.length, getEle.indexOf('.')).length != 6) {
+      alert('Finished Goods Number must be 10 digit number separated by a dot.')
+    }
+  }
+
+  function isNumeric(n) {
+    if (!isNaN(parseFloat(n)) && isFinite(n)) {
+      //do nothing
+    } else {
+      alert("'" + n + "' does not appear to be a number.");
+    }
+  }
+
+  function isInt(value) {
+    if ((value % 1) === 0 && value.toString().indexOf('.') === -1) {
+    } else {
+      alert("'" + value + "' does not appear to be an integer.");
+    }
+  }
+
+</script>
+
+<h2>Update Page for UPC #{{data.FG}}</h2>
+<hr>
+<form method="POST">
+
+  <div class="d-flex flex-wrap">
+
+    <div class="form-label-group twocol">
+      <input type="text" value="{{data.FG}}" id="fg" name="fg" class="form-control" placeholder="Finished Goods Number"
+        onchange="isNumeric(document.getElementById('fg').value);validateUpc();" required>
+      <label for="fg">Finished Goods Number</label>
+    </div>
+
+    <div class="form-label-group twocol">
+      <input type="text" value="{{data.GTIN}}" id="gtin" name="gtin" class="form-control" placeholder="GTIN"
+        onchange="isNumeric(document.getElementById('gtin').value);isInt(document.getElementById('gtin').value);"
+        required>
+      <label for="gtin">GTIN</label>
+    </div>
+
+    <div class="form-label-group">
+      <input type="text" value="{{data.LxDescription}}" id="lx" name="lx" class="form-control"
+        placeholder="LX Description" required>
+      <label for="lx">LX Description</label>
+    </div>
+
+    <div class="form-label-group twocol">
+      <input type="text" value="{{data.Formula}}" id="formula" name="formula" class="form-control"
+        placeholder="Formula">
+      <label for="formula">Formula</label>
+    </div>
+
+    <div class="form-label-group twocol">
+      <input type="text" value="{{data.Country}}" id="country" name="country" class="form-control"
+        placeholder="Country">
+      <label for="country">Country</label>
+    </div>
+
+    <div class="form-label-group twocol">
+      <input type="text" value="{{data.LabelDescription}}" id="LabelDescription" name="LabelDescription"
+        class="form-control" placeholder="Label Description">
+      <label for="LabelDescription">Label Description</label>
+    </div>
+
+    <div class="form-label-group twocol">
+      <input type="text" value="{{data.SubDescription}}" id="SubDescription" name="SubDescription" class="form-control"
+        placeholder="Sub-Description">
+      <label for="SubDescription">Sub-Description</label>
+    </div>
+
+    <div class="form-label-group twocol">
+      <input type="text" value="{{data.Shelf}}" id="Shelf" name="Shelf" class="form-control" placeholder="Shelf"
+        onchange="isNumeric(document.getElementById('Shelf').value);isInt(document.getElementById('Shelf').value);">
+      <label for="Shelf">Shelf</label>
+    </div>
+
+    <div class="form-label-group twocol">
+      <input type="text" value="{{data.Guarantee}}" id="Guarantee" name="Guarantee" class="form-control"
+        placeholder="Guarantee"
+        onchange="isNumeric(document.getElementById('Guarantee').value);isInt(document.getElementById('Guarantee').value);"
+        required>
+      <label for="Guarantee">Guarantee</label>
+    </div>
+
+    <div class="form-label-group twocol">
+      <input type="text" value="{{data.NetWeight}}" id="NetWeight" name="NetWeight" class="form-control"
+        placeholder="Net Weight" onchange="isNumeric(document.getElementById('NetWeight').value);" required>
+      <label for="NetWeight">Net Weight</label>
+    </div>
+
+    <div class="form-label-group twocol">
+      <input type="text" value="{{data.WeightUOM}}" id="WeightUOM" name="WeightUOM" class="form-control"
+        placeholder="Weight UOM" required>
+      <label for="WeightUOM">Weight UOM</label>
+    </div>
+
+    <div class="form-label-group twocol">
+      <input type="text" value="{{data.PackSize}}" id="PackSize" name="PackSize" class="form-control"
+        placeholder="PackSize" onchange="isNumeric(document.getElementById('PackSize').value);" required>
+      <label for="PackSize">PackSize</label>
+    </div>
+
+    <div class="form-label-group twocol">
+      <input type="text" value="{{data.NetContent}}" id="NetContent" name="NetContent" class="form-control"
+        placeholder="Net Content" onchange="isNumeric(document.getElementById('NetContent').value);" required>
+      <label for="NetContent">Net Content</label>
+    </div>
+
+    <div class="form-label-group twocol">
+      <input type="text" value="{{data.NetWeightUOM}}" id="NetWeightUOM" name="NetWeightUOM" class="form-control"
+        placeholder="Net Weight UOM" required>
+      <label for="NetWeightUOM">Net Weight UOM</label>
+    </div>
+
+    <div class="form-label-group twocol">
+      <input type="text" value="{{data.DateCode}}" id="DateCode" name="DateCode" class="form-control"
+        placeholder="Date Code" required>
+      <label for="DateCode">DateCode</label>
+    </div>
+
+    <div class="form-label-group twocol">
+      <input type="text" value="{{data.CADDateCode}}" id="CADDateCode" name="CADDateCode" class="form-control"
+        placeholder="CAD Date Code">
+      <label for="CADDateCode">CAD Date Code</label>
+    </div>
+
+    <div class="form-label-group twocol">
+      <input type="text" value="{{data.Brand}}" id="Brand" name="Brand" class="form-control" placeholder="Brand">
+      <label for="Brand">Brand</label>
+    </div>
+
+    <div class="form-label-group twocol">
+      <input type="text" value="{{data.Logo}}" id="Logo" name="Logo" class="form-control" placeholder="Logo">
+      <label for="Logo">Logo</label>
+    </div>
+
+    <div class="form-label-group twocol">
+      <input type="text" value="{{data.PartNum}}" id="PartNum" name="PartNum" class="form-control"
+        placeholder="Part Number" required>
+      <label for="PartNum">Part Number</label>
+    </div>
+
+    <div class="form-label-group twocol">
+      <input type="text" value="{{data.InspectionLegend}}" id="InspectionLegend" name="InspectionLegend"
+        class="form-control" placeholder="Inspection Legend">
+      <label for="InspectionLegend">Inspection Legend</label>
+    </div>
+
+    <div class="form-label-group twocol">
+      <input type="text" value="{{data.InspectionCode}}" id="InspectionCode" name="InspectionCode" class="form-control"
+        placeholder="Inspection Code">
+      <label for="InspectionCode">Inspection Code</label>
+    </div>
+
+    <div class="form-label-group twocol">
+      <input type="text" value="{{data.DistrStatement}}" id="DistrStatement" name="DistrStatement" class="form-control"
+        placeholder="Distribution Statement" required>
+      <label for="DistrStatement">Distribution Statement</label>
+    </div>
+
+    <div class="form-label-group twocol">
+      <input type="text" value="{{data.NutritionImage}}" id="NutritionImage" name="NutritionImage" class="form-control"
+        placeholder="Nutrition Image">
+      <label for="Nutrition Image">Nutrition Image</label>
+    </div>
+
+    <div class="form-label-group twocol">
+      <input type="text" value="{{data.RepackDescription}}" id="RepackDescription" name="RepackDescription"
+        class="form-control" placeholder="Repack Description">
+      <label for="RepackDescription">Repack Description</label>
+    </div>
+
+    <div class="form-label-group twocol">
+      <input type="text" value="{{data.RepackNutrition}}" id="RepackNutrition" name="RepackNutrition"
+        class="form-control" placeholder="Repack Nutrition">
+      <label for="RepackNutrition">Repack Nutrition</label>
+    </div>
+
+    <div class="form-label-group twocol">
+      <input type="text" value="{{data.UnitUPC}}" id="UnitUPC" name="UnitUPC" class="form-control"
+        placeholder="UnitUPC">
+      <label for="UnitUPC">UnitUPC</label>
+    </div>
+	  
+	      <div class="form-label-group twocol">
+      <input type="text" value="{{data.SafeHandling}}" id="safe" name="safe" class="form-control"
+        placeholder="Safe Handling" required>
+      <label for="safe">Safe Handling</label>
+    </div>
+
+    <div class="form-label-group twocol">
+      <textarea rows="6" id="Ingredients" name="Ingredients" class="form-control"
+        placeholder="Ingredients">{{data.Ingredients}}</textarea>
+      <label for="Ingredients">Ingredients</label>
+    </div>
+
+    <div class="form-label-group twocol">
+      <textarea rows="6" id="RepackIngredients" name="RepackIngredients" class="form-control"
+        placeholder="Repack Ingredients">{{data.RepackIngredients}}</textarea>
+      <label for="RepackIngredients">Repack Ingredients</label>
+    </div>
+
+  </div>
+
+  <h3>Select Facilities</h3>
+  <div class="d-flex flex-wrap align-content-between">
+	  
+	      {{#each recordFacs}}
+    <label style="width: 9%; padding-top:5px; padding-bottom: 5px; color: black;" for="{{this.plant}}">
+      <input type="checkbox" name="{{this}}" id="{{this}}" checked="true">{{this}} &nbsp &nbsp </label>
+    {{/each}}
+
+    {{#each plantNums}}
+    <label style="width: 9%; padding-top:5px; padding-bottom: 5px; color: black;" for="{{this.plant}}" name="{{this.plant}}"
+      id="{{this.plant}}"><input type="checkbox" name="{{this.plant}}">
+      {{this.plant}} &nbsp &nbsp </label> 
+    {{/each}}
+    <label for="CORP" name="CORP" id="CORP" style="width: 9%; padding-top:5px; padding-bottom: 5px; color: black;"><input type="checkbox" name="CORP"> CORP &nbsp &nbsp </label>
+	  
+  </div>
+
+  <br>
+  <input id="btn" type="submit" class="btn btn-lg btn-primary btn-block" value="Update This Record Now">
+
+</form>
+
+<head>
+	  <script src="./../js/core/jquery.min.js" type="text/javascript"></script>
+  <script>
+    function jq() {
+      $('[id]').each(function (i) {
+        $('[id="' + this.id + '"]').slice(1).remove();
+      });
+    }
+
+    function removeFac() {
+      var facilityHI = document.getElementById("HI");
+      facilityHI.remove();
+    }
+
+    jq();
+    removeFac();
+  </script>
+
+</head>

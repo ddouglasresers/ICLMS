@@ -1,0 +1,14 @@
+<h2> We are sorry, but your request was not successful. </h2>
+<hr>
+{{#if err}}
+<h4>{{err}}</h4>
+{{/if}}
+<br>
+<button class="btn btn-lg btn-primary" onclick="goBack()">Go Back</button>
+<br>
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>

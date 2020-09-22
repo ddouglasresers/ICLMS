@@ -1,0 +1,48 @@
+<div class="d-flex justify-content-around align-content-center flex-wrap">
+
+{{#if data.IsActive}}
+<p class="text-center" style="flex:1; min-width:100%;">Record is currently active.</p>
+<input style="flex: 1;" type="button" class="btn btn-danger btn-blk" onclick="location.href='ishidden?ProductID={{ProductID}}&bit=0';" value="Inactivate"/>
+{{/if}}
+{{#unless data.IsActive}}
+<p class="text-center" style="flex:1; min-width:100%;">Record is currently inactive.</p>
+<input style="flex: 1;" type="button" class="btn btn-info btn-blk" onclick="location.href='ishidden?ProductID={{ProductID}}&bit=1';" value="Activate"/> 
+{{/unless}}
+<input style="flex: 1;" type="button" class="btn btn-primary btn-blk" onclick="location.href='update?ProductID={{ProductID}}';" value="Update"/>
+<input style="flex: 1;" type="button" class="btn btn-warning btn-blk" onclick="location.href='historylist?ProductID={{ProductID}}';" value="History"/>
+</div>
+
+<h3 style="margin:20px .31rem 0 .31rem;" class="bg-dark rounded-top text-white px-2">UPC {{data.FG}}</h3>
+<ul class="list-group pt-0">
+{{#if data.Brand}} <li class="list-group-item"><span style="font-weight:400;">Brand:&nbsp;</span> {{data.Brand}}</li> {{/if}}
+{{#if data.Country}} <li class="list-group-item"><span style="font-weight:400;">Country:&nbsp;</span> {{data.Country}} </li> {{/if}}
+{{#if data.Facility}} <li class="list-group-item"><span style="font-weight:400;">Facility:&nbsp;</span> {{data.Facility}}</li> {{/if}}
+{{#if data.PartNum}} <li class="list-group-item"><span style="font-weight:400;">Part Number:&nbsp;</span> {{data.PartNum}}</li> {{/if}}
+{{#if data.FG}} <li class="list-group-item"><span style="font-weight:400;">Finished Goods Number:&nbsp;</span> {{data.FG}}</li> {{/if}}
+{{#if data.UnitUPC}} <li class="list-group-item"><span style="font-weight:400;">Unit UPC:&nbsp;</span> {{data.UnitUPC}}</li> {{/if}}
+{{#if data.GTIN}} <li class="list-group-item"><span style="font-weight:400;">GTIN:&nbsp;</span> {{data.GTIN}}</li> {{/if}}
+{{#if data.LxDescription}} <li class="list-group-item"><span style="font-weight:400;">LX Description:&nbsp;</span> {{data.LxDescription}} </li> {{/if}}
+{{#if data.LabelDescription}} <li class="list-group-item"><span style="font-weight:400;">Label Description:&nbsp;</span> {{data.LabelDescription}}</li> {{/if}}
+{{#if data.SubDescription}} <li class="list-group-item"><span style="font-weight:400;">Sub-description:&nbsp;</span> {{data.SubDescription}} </li> {{/if}}
+{{#if data.Formula}} <li class="list-group-item"><span style="font-weight:400;">Formula:&nbsp;</span> {{data.Formula}} </li> {{/if}}
+{{#if data.Shelf}} <li class="list-group-item"><span style="font-weight:400;">Shelf:&nbsp;</span> {{data.Shelf}}</li> {{/if}}
+{{#if data.Guarantee}} <li class="list-group-item"><span style="font-weight:400;">Guarantee:&nbsp;</span> {{data.Guarantee}}</li> {{/if}}
+{{#if data.SafeHandling}} <li class="list-group-item"><span style="font-weight:400;">SafeHandling:&nbsp;</span> {{data.SafeHandling}}</li> {{/if}}
+{{#if data.NetWeight}} <li class="list-group-item"><span style="font-weight:400;">Net Weight:&nbsp;</span> {{data.NetWeight}}</li> {{/if}}
+{{#if data.WeightUOM}} <li class="list-group-item"><span style="font-weight:400;">Weight UOM:&nbsp;</span> {{data.WeightUOM}}</li> {{/if}}
+{{#if data.PackSize}} <li class="list-group-item"><span style="font-weight:400;">Pack Size:&nbsp;</span> {{data.PackSize}}</li> {{/if}}
+{{#if data.NetContent}} <li class="list-group-item"><span style="font-weight:400;">Net Content:&nbsp;</span> {{data.NetContent}}</li> {{/if}}
+{{#if data.NetWeightUOM}} <li class="list-group-item"><span style="font-weight:400;">Net Weight UOM:&nbsp;</span> {{data.NetWeightUOM}}</li> {{/if}}
+{{#if data.DateCode}} <li class="list-group-item"><span style="font-weight:400;">Date Code:&nbsp;</span> {{data.DateCode}}</li> {{/if}}
+{{#if data.CADDateCode}} <li class="list-group-item"><span style="font-weight:400;">CAD Date Code:&nbsp;</span> {{data.CADDateCode}} </li> {{/if}}
+{{#if data.DistrStatement}} <li class="list-group-item"><span style="font-weight:400;">Distribution Statement:&nbsp;</span> {{data.DistrStatement}} </li> {{/if}}
+{{#if data.Logo}} <li class="list-group-item"><span style="font-weight:400;">Logo:&nbsp;</span> {{data.Logo}} </li> {{/if}}
+{{#if data.InspectionLegend}} <li class="list-group-item"><span style="font-weight:400;">Inspection Legend:&nbsp;</span> {{data.InspectionLegend}} </li> {{/if}}
+{{#if data.InspectionCode}} <li class="list-group-item"><span style="font-weight:400;">Inspection Code:&nbsp;</span> {{data.InspectionCode}} </li> {{/if}}
+{{#if data.LastUpdatedBy}} <li class="list-group-item"><span style="font-weight:400;">Last Updated By:&nbsp;</span> {{data.LastUpdatedBy}} </li> {{/if}}
+{{#if data.NutritionImage}} <li class="list-group-item"><span style="font-weight:400;">Nutrition Image:&nbsp;</span> {{data.NutritionImage}} </li> {{/if}}
+{{#if data.Ingredients}} <li class="list-group-item"><span style="font-weight:400;">Ingredient Statement:&nbsp;</span> {{data.Ingredients}}</li> {{/if}}
+{{#if data.RepackDescription}} <li class="list-group-item"><span style="font-weight:400;">Repack Description:&nbsp;</span> {{data.RepackDescription}}</li> {{/if}}
+{{#if data.RepackIngredients}} <li class="list-group-item"><span style="font-weight:400;">Repack Ingredients:&nbsp;</span> {{data.RepackIngredients}}</li> {{/if}}
+{{#if data.RepackNutrition}} <li class="list-group-item"><span style="font-weight:400;">Repack Nutrition:&nbsp;</span> {{data.RepackNutrition}}</li> {{/if}}
+</ul>

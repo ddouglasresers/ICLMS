@@ -1,0 +1,64 @@
+{{#unless data.length}}
+
+<div class="container d-flex align-items-stretch flex-column flex-wrap">
+  <h2 class="align-self-center font-weight-bold pb-4">Search Existing Labels</h2>
+  <form>
+
+    <div class="d-flex justify-content-between">
+
+      <div class="form-label-group w-50">
+        <input type="text" id="fg" name="fg" class="form-control" placeholder="UPC/Finished Goods">
+        <label for="fg">Finished Goods</label>
+      </div>
+
+      <div class="form-label-group w-50">
+        <input type="text" id="formula" name="formula" class="form-control" placeholder="Formula">
+        <label for="formula">Formula</label>
+      </div>
+
+    </div>
+    <div class="d-flex justify-content-between">
+
+      <div class="form-label-group w-50">
+        <input type="text" id="gtin" name="gtin" class="form-control" placeholder="GTIN">
+        <label for="gtin">GTIN</label>
+      </div>
+
+      <div class="form-label-group w-50">
+        <input type="text" id="lx" name="lx" class="form-control" placeholder="LX Description">
+        <label for="lxDescription">LX Description</label>
+      </div>
+
+    </div>
+
+    <input id="btn" type="submit" class="btn btn-lg btn-primary btn-block" value="Search">
+
+  </form>
+</div>
+{{/unless}}
+
+{{#if data.length}}
+
+<div class="container d-flex align-items-stretch flex-column flex-wrap">
+
+  <div class="d-flex justify-content-around align-items-center pb-2">
+    <h2 class=" m-0 align-self-center text-center font-weight-bold" style="flex:6;">{{data.length}} record(s) found.
+    </h2>
+    <button style="flex:1; font-size:14px;" type="button" class="btn btn-primary btn-blk px-2 px-lg-5" onclick="location.href='csv?fg={{fg}}&formula={{formula}}&gtin={{gtin}}&lx={{lx}}';">Download Results</button>
+      </div>
+  <div style="height: 0.7vmin; width:100%; opacity:0.6;" class=" bg-dark rounded mb-2"></div>
+  {{#each data}}
+  <a href="details?ProductID={{this.ProductID}}">
+    <div class="card">
+      <div class="card-header">{{this.FG}}</div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><b>GTIN:</b>&nbsp;{{this.GTIN}}</li>
+        <li class="list-group-item"><b>Description:</b>&nbsp;{{this.LxDescription}}</li>
+        {{#if this.Formula}}<li class="list-group-item"><b>Formula:</b>&nbsp;{{this.Formula}}</li>{{/if}}
+        {{#if this.PartNum}}<li class="list-group-item"><b>Part Number:</b>&nbsp;{{this.PartNum}}</li>{{/if}}
+      </ul>
+    </div>
+  </a>
+  {{/each}}
+</div>
+{{/if}}

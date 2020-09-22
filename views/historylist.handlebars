@@ -1,0 +1,25 @@
+{{#if data.length}}
+<h2>Update History for UPC {{upc}}</h2>
+
+<hr>
+
+<h4 class="ml-2">Listed by date (newest first)</h4>
+
+<div class="container d-flex align-items-stretch flex-column flex-wrap">
+    {{#each data}}
+    <a href="history?id={{this.ID}}">
+        <div class="card">
+            <div class="card-header">{{this.UpdatedOn}}</div>
+            <ul class="list-group list-group-flush">
+                {{#if this.Username}}<li class="list-group-item"><b>Updated By:</b>&nbsp;{{this.Username}}</li>{{/if}}
+            </ul>
+        </div>
+    </a>
+    {{/each}}
+</div>
+
+{{/if}}
+
+{{#unless data.length}}
+<h6>This record has no history of changes.</h6>
+{{/unless}}
